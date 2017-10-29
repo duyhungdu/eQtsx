@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46A4E072-BEC8-47EE-A3B6-79DA3F8BF578}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>xRPRepository</RootNamespace>
+    <AssemblyName>xRPRepository</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\xRP\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Repository\Base\IRepository.cs" />
+    <Compile Include="Repository\Base\Repository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Base\DRepository.cs" />
+    <Compile Include="Repository\Qlsx_BaoCaoRepository.cs" />
+    <Compile Include="Repository\Qlsx_CoCauGiayTheoSongRepository.cs" />
+    <Compile Include="Repository\Qlsx_CongDoanRepository.cs" />
+    <Compile Include="Repository\Qldh_HeSoTongGiaoReposity.cs" />
+    <Compile Include="Repository\Qldh_KhachHangReposity.cs" />
+    <Compile Include="Repository\Qldh_KichThuocReposity.cs" />
+    <Compile Include="Repository\Qldh_LoaiSanPhamRepostity.cs" />
+    <Compile Include="Repository\Qldh_NhomKhachHangReposity.cs" />
+    <Compile Include="Repository\Qldh_SongReposity.cs" />
+    <Compile Include="Repository\Qlnl_NguonLucRepository.cs" />
+    <Compile Include="Repository\Qlsx_LenhSanXuatRepository.cs" />
+    <Compile Include="Repository\Qlsx_PhanLoaiSongRepository.cs" />
+    <Compile Include="Repository\Qlsx_PhieuYeuCauVatTuRepository.cs" />
+    <Compile Include="Repository\Qlsx_TenLopGiayRepository.cs" />
+    <Compile Include="Repository\Qlsx_YeuCauSanXuatRepository.cs" />
+    <Compile Include="Repository\Qlvt_NhaCungCapRepository.cs" />
+    <Compile Include="Repository\Qlvt_NhapXuatThanhPhamRepository.cs" />
+    <Compile Include="Repository\Sys_CanBoRepository.cs" />
+    <Compile Include="Repository\Sys_DanhMucChucVuRepository.cs" />
+    <Compile Include="Repository\Sys_DanhMucDonViRepository.cs" />
+    <Compile Include="Repository\Sys_NhomQuyenRepository.cs" />
+    <Compile Include="Repository\Sys_NguoiDungNhomRepository.cs" />
+    <Compile Include="Repository\Sys_NguoiDungQuyenRepository.cs" />
+    <Compile Include="Repository\Sys_QuyenTheoNhomRepository.cs" />
+    <Compile Include="Repository\Sys_ThongSoHeThongRepository.cs" />
+    <Compile Include="Repository\Sys_LogRepository.cs" />
+    <Compile Include="Repository\Sys_DanhMucNhomRepository.cs" />
+    <Compile Include="Repository\Qlvt_PhieuNhapRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repository\Sys_PhanHeRepository.cs" />
+    <Compile Include="Repository\Sys_FunctionRepository.cs" />
+    <Compile Include="Repository\Qlvt_KhoVatTuRepository.cs" />
+    <Compile Include="Repository\Qlvt_LoaiVatTuRepository.cs" />
+    <Compile Include="Repository\Qlvt_TinhChatNhapXuatRepository.cs" />
+    <Compile Include="Repository\Qlvt_VatTuNhapRepository.cs" />
+    <Compile Include="Repository\Qlvt_VatTuRepository.cs" />
+    <Compile Include="Repository\Sys_UserLogsRepository.cs" />
+    <Compile Include="Status\xRPStatus.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enum\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xRPDAL\xRPDAL.csproj">
+      <Project>{5c3181ec-f4c0-4f1f-82d9-64e22d2b8c38}</Project>
+      <Name>xRPDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

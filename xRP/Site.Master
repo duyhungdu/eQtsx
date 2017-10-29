@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="xRP.Site" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1" runat="server">
+
+    <title>xRP - Quản lý Sản xuất</title>
+    <asp:PlaceHolder ID="plcHead" runat="server">
+        <link href="<%#Util.SERVER_NAME %>/Styles/images/ico.gif" rel="shortcut icon" type="image/x-icon" />
+
+        <script src="<%#Util.SERVER_NAME %>/Scripts/resource/jquery-1.7.2.min.js"></script>
+
+        <script src="<%#Util.SERVER_NAME %>/Scripts/common/common.js"></script>
+        <script src="<%#Util.SERVER_NAME %>/Scripts/data-object/nhapvattu.js"></script>
+        <script src="<%#Util.SERVER_NAME %>/Scripts/data-object/xuatvattu.js"></script>
+        <script src="<%#Util.SERVER_NAME %>/Scripts/data-object/donhang.js"></script>
+        <!-- phamkhuong102 -->
+        <script src="<%#Util.SERVER_NAME %>/Scripts/data-object/congdoan.js"></script>
+        <script src="<%#Util.SERVER_NAME %>/Scripts/data-object/nguonluc.js"></script>
+        <script src="<%#Util.SERVER_NAME %>/Scripts/data-object/phanloaisong.js"></script>
+        <script src="<%#Util.SERVER_NAME %>/Scripts/data-object/phieuyeucauvattu.js"></script>
+        <script src="<%#Util.SERVER_NAME %>/Scripts/data-object/nhapxuatthanhpham.js"></script>
+        <script src="<%#Util.SERVER_NAME %>/Scripts/data-object/yeucausanxuat.js"></script>
+        <script src="<%#Util.SERVER_NAME %>/Scripts/data-object/cocaugiay.js"></script>
+        <!-- end -->
+        <script type="text/javascript" src="<%#Util.SERVER_NAME %>/Scripts/resource/jquery-autocomplete-p1/js/jquery-ui-1.8.14.custom.min.js"></script>
+        <script src="<%#Util.SERVER_NAME %>/Scripts/resource/jquery-1.10.2.js"></script>
+        <script src="<%#Util.SERVER_NAME %>/Scripts/resource/jquery-ui.js"></script>
+        <script src="<%#Util.SERVER_NAME %>/Scripts/resource/auto-complete/jquery.autocomplete.js"></script>
+        <link href="<%#Util.SERVER_NAME %>/Styles/styles.css" rel="stylesheet" />
+        <link href="<%#Util.SERVER_NAME %>/Styles/hub.css" rel="stylesheet" />
+        <link href="<%#Util.SERVER_NAME %>/Styles/jquery-modified.css" rel="stylesheet" />
+        <%--datetime mask--%>
+        <script src="<%#Util.SERVER_NAME %>/Scripts/resource/jquery.mask.min.js"></script>
+        <%--end datetime mask--%>
+        <%--datetime picker with mask--%>
+        <link href="<%#Util.SERVER_NAME %>/Scripts/resource/jquery.datetimepicker.css" rel="stylesheet" />
+        <script src="<%#Util.SERVER_NAME %>/Scripts/resource/jquery.datetimepicker.js"></script>
+        <%--end datetime picker with mask--%>
+
+        <link href="<%#Util.SERVER_NAME %>/Scripts/resource/jui_dropdown-master/jui_dropdown-master/jquery.jui_dropdown.css" rel="stylesheet" />
+        <script src="<%#Util.SERVER_NAME %>/Scripts/resource/jui_dropdown-master/jui_dropdown-master/jquery.jui_dropdown.min.js"></script>
+
+        <%--foundation--%>
+        <link href="<%#Util.SERVER_NAME %>/Styles/foundation-5.4.7/css/foundation.css" rel="stylesheet" />
+
+        <%--jquery query string--%>
+        <script src="<%#Util.SERVER_NAME %>/Scripts/resource/querystring-0.9.0.js"></script>
+       
+    </asp:PlaceHolder>
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form id="Form1" runat="server">
+
+        <div class="main-container">
+
+            <div class="main main-responsive">
+                <div class="header-section header-post11 no-hubgroups">
+
+                    <div id="header-row" class="nav-separated" role="banner">
+                        <a class="header-item logo header-logo-hosted logo-text" href="/" title="Quản lý sản xuất">QUẢN LÝ SẢN XUẤT</a>
+
+                        <div class="right-side">
+                            <ul class="top-level-menu-v2 user-menu header-item enhance menu-bar ul_horizontal_menu">
+                                <li class="menu-item">
+                                    <span class="alignment-marker text" title="administrator">
+                                        <asp:Literal ID="ltUserName" runat="server"></asp:Literal>
+                                        &nbsp;|&nbsp;
+                                        <asp:Literal ID="ltLogout" runat="server"></asp:Literal></span>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div id="navWrapper" class="nav-separated">
+                        <div class="hubs-section">
+                            <ul class="hubs ul_horizontal_menu">
+                                <asp:Literal ID="ltMenu" runat="server"></asp:Literal>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content-section">
+                    <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+                </div>
+
+            </div>
+        </div>
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <script src="<%#Util.SERVER_NAME %>/Styles/foundation-5.4.7/js/foundation.min.js"></script>
+        <script>
+            $(document).foundation();
+            $(function () {
+                $('.icon-up,.icon-down').click(function () {
+
+                    var row = $(this).parents('tr:first'), $reindex_start;
+                    if ($(this).is('.icon-up')) {
+                        row.insertBefore(row.prev());
+                        $reindex_start = row;
+                    }
+                    else {
+                        $reindex_start = row.next()
+                        row.insertAfter($reindex_start);
+                    }
+                    var index = $reindex_start.index() + 1;
+                    $reindex_start.nextAll().andSelf().each(function (i) {
+                        /* since header row is zero, starting index and row number are the same*/
+                        $(this).find('.sothutu').html(index + i);
+                        //$(this).find('.thutu-uutien').val(index + i);
+                    })
+                });
+            });
+        </script>
+    </form>
+</body>
+</html>
